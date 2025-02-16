@@ -1,0 +1,97 @@
+.search {
+    .container {
+        display: block;
+    }
+    .line {
+        display: flex;
+        gap: 24px;
+        padding-bottom: 40px;
+    }
+    h4 {
+        padding-top: 40px;
+        padding-bottom: 8px;
+        color: rgb(0, 0, 0);
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    form {
+        width: 392px;
+        height: 48px;
+        box-sizing: border-box;
+        /* Stroke/Gray */
+        border: 1px solid rgb(163, 163, 163);
+        border-radius: 5px;
+
+        /* Drop shadow */
+        box-shadow: 0px 5px 25px 0px rgba(45, 45, 45, 0.25);
+        /* Fill/90 % */
+        background: rgba(255, 255, 255, 0.9);
+        padding: 16px 16px 0px 24px;
+        display: flex;
+        align-content: center;
+        input {
+            outline: none;
+            width: 259px;
+            height: 16px;
+            border: none;
+            background: none;
+                color: rgb(95, 95, 95);
+                font-family: Karla;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0px;
+                text-align: left;
+        }
+        .close {
+            align-self: center;
+            position: relative;
+            top: -5px;
+            left: 30px;
+        }
+    }
+}
+
+.form__square {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -16px;
+    left: 46px;
+    display: flex;
+    background: rgb(0, 0, 0);
+    width: 48px;
+    height: 48px;
+    img {
+        cursor: pointer;
+    }
+}
+
+.time {
+    width: 288px;
+    height: 48px;
+    box-sizing: border-box;
+    /* Stroke/Gray */
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 5px;
+
+    /* Drop shadow */
+    box-shadow: 0px 5px 25px 0px rgba(45, 45, 45, 0.25);
+    /* Fill/90 % */
+    background: rgba(255, 255, 255, 0.9);
+    /* Body Text 3/Regular */
+    color: rgb(0, 0, 0);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
