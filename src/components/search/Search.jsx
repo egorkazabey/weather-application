@@ -1,9 +1,10 @@
-import "./Search.scss";
-import imageSearch from "../../images/icons/searchIcon.svg";
-import iconClose from "../../images/icons/iconClose.svg";
+import './Search.scss'
+import imageSearch from '../../images/icons/searchIcon.svg'
+import iconClose from '../../images/icons/iconClose.svg'
 
-function Search() {
+function Search({setCity, city}) {
     const date = new Date();
+
 
 
     const dayNames = [
@@ -16,17 +17,22 @@ function Search() {
         "Saturday",
     ];
 
+    const formSubmit = (e) => {
+        e.preventDefault()
+
+    }
+
     return (
         <div className="search">
             <div className="container">
                 <h4>Введите город или район</h4>
                 <div className="line">
-                    <form>
-                        <input type="text" placeholder="Например, Москва" />
+                    <form onSubmit={formSubmit}>
+                        <input type="text" placeholder="Например, Москва" onChange={(e) => setCity(e.target.value)}/>
                         <img className="close" src={iconClose} alt="" />
-                        <div className="form__square">
+                        <button className="form__square">
                             <img src={imageSearch} alt="search" />
-                        </div>
+                        </button>
                     </form>
                     <div className="time">
                         <p>
