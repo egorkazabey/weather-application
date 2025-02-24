@@ -1,18 +1,19 @@
-import "./Header.scss";
-import "../../index.scss";
-import image from "../../images/icons/buttonArr.svg";
+import './Header.scss'
+import '../../index.scss'
+import image from '../../images/icons/buttonArr.svg'
 
-function Header() {
+function Header(props) {
+    const id = Date.now();
     const cities = [
-        "Москва",
-        "Санкт-Петербург",
-        "Новосибирск",
-        "Екатеринбург",
-        "Казань",
-        "Нижний Новгород",
+            "Москва",
+            "Санкт-Петербург",
+            "Новосибирск",
+            "Екатеринбург",
+            "Казань",
+            "Нижний Новгород",
     ];
 
-    const citiesList = cities.map((city) => <li>{city}</li>);
+    const citiesList = cities.map((city) => <li key={id}>{city}</li>);
 
     return (
         <header>

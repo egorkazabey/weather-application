@@ -2,7 +2,7 @@ import './Search.scss'
 import imageSearch from '../../images/icons/searchIcon.svg'
 import iconClose from '../../images/icons/iconClose.svg'
 
-function Search({setCity, city}) {
+function Search(props) {
     const date = new Date();
 
 
@@ -19,7 +19,7 @@ function Search({setCity, city}) {
 
     const formSubmit = (e) => {
         e.preventDefault()
-
+        props.fetchData()
     }
 
     return (
@@ -28,7 +28,7 @@ function Search({setCity, city}) {
                 <h4>Введите город или район</h4>
                 <div className="line">
                     <form onSubmit={formSubmit}>
-                        <input type="text" placeholder="Например, Москва" onChange={(e) => setCity(e.target.value)}/>
+                        <input type="text" placeholder="Например, Москва" onChange={(e) => props.setCity(e.target.value)}/>
                         <img className="close" src={iconClose} alt="" />
                         <button className="form__square">
                             <img src={imageSearch} alt="search" />
