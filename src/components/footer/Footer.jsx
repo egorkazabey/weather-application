@@ -2,9 +2,7 @@ import './Footer.scss'
 import '../../index.scss'
 
 
-function Footer() {
-
-    
+const Footer = () => {
 
     return ( 
         <footer>

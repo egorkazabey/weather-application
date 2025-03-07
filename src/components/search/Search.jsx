@@ -2,10 +2,8 @@ import './Search.scss'
 import imageSearch from '../../images/icons/searchIcon.svg'
 import iconClose from '../../images/icons/iconClose.svg'
 
-function Search(props) {
+const Search = ({city, setCity, fetchData}) => {
     const date = new Date();
-
-
 
     const dayNames = [
         "Sunday",
@@ -19,8 +17,11 @@ function Search(props) {
 
     const formSubmit = (e) => {
         e.preventDefault()
-        props.fetchData()
+        fetchData()
+        setCity('')
     }
+
+
 
     return (
         <div className="search">
@@ -28,8 +29,8 @@ function Search(props) {
                 <h4>Введите город или район</h4>
                 <div className="line">
                     <form onSubmit={formSubmit}>
-                        <input type="text" placeholder="Например, Москва" onChange={(e) => props.setCity(e.target.value)}/>
-                        <img className="close" src={iconClose} alt="" />
+                        <input type="text" placeholder="Например, Москва" value={city} onChange={(e) => setCity(e.target.value)}/>
+                        <img onClick={() => setCity('')} className="close" src={iconClose} alt="" />
                         <button className="form__square">
                             <img src={imageSearch} alt="search" />
                         </button>
