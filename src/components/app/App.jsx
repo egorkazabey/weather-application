@@ -14,7 +14,7 @@ const App = () => {
 
   const [temperature, setTemperature] = useState();
   const [feelsLike, setFeelsLike] = useState();
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Введите город');
   const [region, setRegion] = useState();
   const [windSpeed, setWindSpeed] = useState();
   const [cloudy, setCloudy] = useState();
@@ -22,8 +22,9 @@ const App = () => {
   const [visibility, setVisibility] = useState();
   const [humidity, setHumidity] = useState();
   const [pressure, setPressure] = useState();
-
-
+  const [cityLength, setCityLength] = useState('0')
+  const [weatherDescription, setWeatherDescription] = useState()
+  const [weatherIcon, setWeatherIcon] = useState()
   
 
   const fetchData = async () => {
@@ -39,6 +40,8 @@ const App = () => {
       setVisibility(json.visibility);
       setHumidity(json.main.humidity);
       setPressure(json.main.pressure);
+      setWeatherDescription(json.weather[0].description)
+      setWeatherIcon(json.weather[0].icon)
       console.log(json);
     });
   };
@@ -53,15 +56,20 @@ const App = () => {
     gusts,
     visibility,
     humidity,
-    pressure
+    pressure,
+    weatherDescription,
+    weatherIcon
   }
 
   return (
     <div className="App">
       <Header />
-      <Search city={city} setCity={setCity} fetchData={fetchData} />
+      <Search
+      cityLength={cityLength} setCityLength={setCityLength} city={city} setCity={setCity} fetchData={fetchData} />
       <Weather
         weather={weather}
+        city={city}
+        cityLength={cityLength}
       />
       <Footer />
     </div>

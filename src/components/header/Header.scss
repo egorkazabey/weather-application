@@ -9,11 +9,6 @@ header {
     background: rgba(255, 255, 255, 0.3);
 }
 
-ul {
-    list-style-type: none;
-    display: flex;
-    gap: 16px;
-}
 
 .container {
     display: flex;
@@ -21,27 +16,7 @@ ul {
     gap: 18px;
 }
 
-
-.button {
-    border: 1px;
-    border-radius: 5px;
-    background: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-li {
-    /* Body Text 3/Regular */
-    color: rgb(0, 0, 0);
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 0px;
-    text-align: left;
+.title {
+    width: 100%;
+    text-align: center;
 }
