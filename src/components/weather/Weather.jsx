@@ -1,7 +1,7 @@
 import "./Weather.scss";
 import "../../index.scss";
 
-const Weather = ({ weather, city, cityLength }) => {
+const Weather = ({ weather, cityLength }) => {
   return (
     <main>
       <div className="container">
