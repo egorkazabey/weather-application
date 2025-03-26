@@ -6,15 +6,15 @@ import Weather from "../weather/Weather";
 import { useState } from "react";
 
 const App = () => {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   const URL =
-    `https://api.openweathermap.org/data/2.5/weather?q=` 
-    + city +
+    `https://api.openweathermap.org/data/2.5/weather?q=` +
+    city +
     `&units=metric&appid=5e8f0afbfabeebdf641986448c1eb261`;
 
   const [temperature, setTemperature] = useState();
   const [feelsLike, setFeelsLike] = useState();
-  const [name, setName] = useState('Введите город');
+  const [name, setName] = useState("Введите город");
   const [region, setRegion] = useState();
   const [windSpeed, setWindSpeed] = useState();
   const [cloudy, setCloudy] = useState();
@@ -22,10 +22,9 @@ const App = () => {
   const [visibility, setVisibility] = useState();
   const [humidity, setHumidity] = useState();
   const [pressure, setPressure] = useState();
-  const [cityLength, setCityLength] = useState('0')
-  const [weatherDescription, setWeatherDescription] = useState()
-  const [weatherIcon, setWeatherIcon] = useState()
-  
+  const [cityLength, setCityLength] = useState("0");
+  const [weatherDescription, setWeatherDescription] = useState();
+  const [weatherIcon, setWeatherIcon] = useState();
 
   const fetchData = async () => {
     const result = await fetch(URL);
@@ -40,8 +39,8 @@ const App = () => {
       setVisibility(json.visibility);
       setHumidity(json.main.humidity);
       setPressure(json.main.pressure);
-      setWeatherDescription(json.weather[0].description)
-      setWeatherIcon(json.weather[0].icon)
+      setWeatherDescription(json.weather[0].description);
+      setWeatherIcon(json.weather[0].icon);
       console.log(json);
     });
   };
@@ -58,22 +57,23 @@ const App = () => {
     humidity,
     pressure,
     weatherDescription,
-    weatherIcon
-  }
+    weatherIcon,
+  };
 
   return (
     <div className="App">
       <Header />
       <Search
-      cityLength={cityLength} setCityLength={setCityLength} city={city} setCity={setCity} fetchData={fetchData} />
-      <Weather
-        weather={weather}
-        city={city}
         cityLength={cityLength}
+        setCityLength={setCityLength}
+        city={city}
+        setCity={setCity}
+        fetchData={fetchData}
       />
+      <Weather weather={weather} city={city} cityLength={cityLength} />
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

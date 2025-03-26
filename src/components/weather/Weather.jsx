@@ -6,7 +6,7 @@ const Weather = ({ weather, city, cityLength }) => {
     <main>
       <div className="container">
         {cityLength > 1 ? (
-            <>
+          <>
             <div className="card">
               <div className="h__line">
                 <h1 className="city">
@@ -18,10 +18,18 @@ const Weather = ({ weather, city, cityLength }) => {
             <div className="temperature">
               <div className="temperature__line">
                 <span>{weather.temperature}℃</span>
-                <img src={'https://openweathermap.org/img/wn/' + weather.weatherIcon + '.png'} alt="weather" className="weather" />
+                <img
+                  src={
+                    "https://openweathermap.org/img/wn/" +
+                    weather.weatherIcon +
+                    ".png"
+                  }
+                  alt="weather"
+                  className="weather"
+                />
               </div>
               <p className="feels">
-              Feels like {weather.feelsLike}℃, {weather.weatherDescription}
+                Feels like {weather.feelsLike}℃, {weather.weatherDescription}
               </p>
             </div>
             <div className="info">
@@ -76,7 +84,7 @@ const Weather = ({ weather, city, cityLength }) => {
             </div>
           </>
         ) : (
-            <h2>Enter city or region</h2>
+          <h2>Enter city or region</h2>
         )}
       </div>
     </main>

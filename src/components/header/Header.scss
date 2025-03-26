@@ -1,22 +1,18 @@
 header {
-    height: 56px;
-    box-sizing: border-box;
-    /* Stroke/Gray */
-    border-bottom: 1px solid rgb(163, 163, 163);
-    /* Drop shadow */
-    box-shadow: 0px 5px 25px 0px rgba(45, 45, 45, 0.25);
-    /* Fill/30 % */
-    background: rgba(255, 255, 255, 0.3);
+  height: 56px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(163, 163, 163);
+  box-shadow: 0px 5px 25px 0px rgba(45, 45, 45, 0.25);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-
 .container {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .title {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
